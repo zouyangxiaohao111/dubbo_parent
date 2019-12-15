@@ -8,9 +8,10 @@
 
 
     <bean id="helloService" class="cn.tx.service.impl.HelloServiceImpl"></bean>
-    <dubbo:application name="hello"></dubbo:application>
+    <dubbo:application name="hello"/>
 
-    <dubbo:registry address="multicast://224.5.6.7:1234"></dubbo:registry>
-    <dubbo:protocol port="20880"></dubbo:protocol>
-    <dubbo:service interface="cn.tx.service.HelloService" ref="helloService" ></dubbo:service>
+    <!--服务注册地址，生成环境使用zookeeper-->
+       <dubbo:registry address="multicast://224.5.6.7:1234" />
+    <dubbo:protocol port="20880"/>
+    <dubbo:service interface="cn.tx.service.HelloService" ref="helloService" />
 </beans>
